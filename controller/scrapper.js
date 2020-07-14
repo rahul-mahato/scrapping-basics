@@ -8,7 +8,7 @@ exports.login = async (email, pass) => {
   let page = await browser.newPage();
 
   //   await page.screenshot({ path: 'tnpLogin.png' });
-  //   1705256@kiit.ac.in rWLZqBv@3D3b
+
   await page.goto(loginPage, { waitUntil: 'networkidle2' });
   await page.type('#usr.email', email);
   await page.type('#pwd.pass', pass);
