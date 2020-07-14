@@ -23,6 +23,7 @@ webpush.setVapidDetails(
 // Subscribe Route
 app.post('/subscribe', async (req, res) => {
   // Get pushSubscription object
+  try{
   const { subscription, email, pass } = req.body;
   const subscriptions = subscription;
 
@@ -34,9 +35,12 @@ app.post('/subscribe', async (req, res) => {
   const payload = JSON.stringify({ title: data.notice });
 
   // Pass object into sendNotification
-  webpush
+  return webpush
     .sendNotification(subscriptions, payload)
     .catch((err) => console.error(err));
+  }catch(err){
+    console.log("Error ",err);
+  }
 });
 
 const port = process.env.PORT || 5000;
