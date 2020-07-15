@@ -51,7 +51,7 @@ async function send(email, pass) {
   console.log('Push Registered...');
 
   console.log('Sending Push...');
-  await fetch('/subscribe', {
+  await fetch('http://206.189.49.176:5002/subscribe', {
     method: 'POST',
     body: JSON.stringify({ subscription, email, pass }),
     headers: {
