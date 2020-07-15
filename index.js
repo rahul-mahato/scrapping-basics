@@ -43,6 +43,6 @@ app.post('/subscribe', async (req, res) => {
   }
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5002;
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
