@@ -17,11 +17,7 @@ if ('serviceWorker' in navigator) {
     }, 120000);
   } else {
     console.log('hello');
-    document.getElementById('form').innerHTML = `<form id="loginForm">
-      Email : <input type="email" id="email" name="email" /> <br />
-      Password : <input type="password" id="pwd" name="pwd" /> <br />
-      <button type="submit">Submit</button>
-    </form>`;
+    document.getElementById('form').innerHTML = ``;
   }
 }
 
@@ -32,6 +28,9 @@ loginForm.addEventListener('submit', (e) => {
   const password = loginForm['pwd'].value;
   localStorage.setItem('email', email);
   localStorage.setItem('pwd', password);
+  document.getElementById(
+    'form'
+  ).innerHTML = `<h1>You will now receive notifications</h1>`;
 });
 
 // Register SW, Register Push, Send Push
